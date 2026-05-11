@@ -1,4 +1,4 @@
-# Oculis  Turn Your Dream Into a Game‑Like Journey
+# Oculis  Turn Your Dream Into a Game Like Journey
 
 Oculis is a full‑stack web application that transforms a user’s dream or main life goal into a structured, gamified journey. Users describe their dream and answer questions about their life situation; the AI then breaks this goal into personalized levels and tasks stored in a database.
 
