@@ -1,0 +1,406 @@
+.dreams-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* top bar */
+.dreams-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+}
+
+.dreams-home-btn,
+.dreams-settings-btn {
+  border: none;
+  background: none;
+  color: #e5e7eb;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 999px;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.dreams-home-btn:hover,
+.dreams-settings-btn:hover {
+  transform: translateY(-1px);
+  color: #f9fafb;
+  opacity: 0.98;
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+.dreams-title {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #f9fafb;
+  opacity: 0.9;
+}
+
+/* main layout */
+.dreams-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 18px;
+  padding: 10px 22px 22px;
+}
+.dreams-list {
+  position: relative;
+  border-radius: 22px;
+  padding: 16px 14px 14px;
+  opacity: 0.98;
+  backdrop-filter: blur(24px);
+  /* make left the same style as right */
+  background:
+    radial-gradient(
+      circle at 0 0,
+      rgba(56, 189, 248, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.16), transparent),
+    rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background-clip: padding-box;
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.95),
+    0 0 22px rgba(15, 23, 42, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.dreams-list-title {
+  font-size: 0.9rem;
+  margin: 0 0 6px;
+  opacity: 0.9;
+  color: #e5e7eb;
+}
+
+/* "+ New dream" button – amber accent */
+.dreams-add-btn {
+  align-self: flex-start;
+  border-radius: 999px;
+  border: 1px solid rgba(250, 204, 21, 0.7);
+  padding: 6px 14px;
+  background:
+    radial-gradient(circle at 0 0, rgba(251, 191, 36, 0.5), transparent 55%),
+    linear-gradient(90deg, #fbbf24, #fb923c);
+  color: #111827;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease,
+    filter 0.15s ease;
+}
+
+.dreams-add-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.98;
+  filter: brightness(1.03);
+  box-shadow:
+    0 16px 34px rgba(15, 23, 42, 1),
+    0 0 20px rgba(250, 204, 21, 0.8);
+}
+
+.dreams-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* dream list item */
+.dream-item {
+  width: 100%;
+  text-align: left;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: radial-gradient(
+    circle at 0 0,
+    rgba(15, 23, 42, 0.96),
+    rgba(15, 23, 42, 0.46)
+  );
+  color: #f9fafb;
+  padding: 9px 10px;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.dream-item:hover {
+  background: radial-gradient(
+    circle at 0 0,
+    rgba(15, 23, 42, 0.98),
+    rgba(15, 23, 42, 0.6)
+  );
+  border-color: rgba(148, 163, 184, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.9);
+}
+
+.dream-item.active {
+  border-color: transparent;
+  background:
+    linear-gradient(135deg, #020617, #020617) padding-box,
+    linear-gradient(135deg, #fbbf24, #fb923c) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.98),
+    0 0 18px rgba(250, 204, 21, 0.8);
+}
+
+.dream-item-title {
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+
+.dream-item-sub {
+  font-size: 0.75rem;
+  opacity: 0.78;
+  margin-top: 2px;
+}
+
+/* list item header with % */
+.dream-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.dream-item-progress-label {
+  font-size: 0.7rem;
+  opacity: 0.82;
+}
+
+/* small bar in the list item – warm amber */
+.dream-progress-bar {
+  margin-top: 6px;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.96);
+  overflow: hidden;
+}
+
+.dream-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fbbf24, #fb923c);
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
+  transition: width 0.2s ease;
+}
+
+/* right detail panel */
+.dreams-detail {
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(56, 189, 248, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.16), transparent),
+    rgba(15, 23, 42, 0.9);
+  border-radius: 22px;
+  padding: 18px 20px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 24px 56px rgba(15, 23, 42, 0.98);
+}
+
+.dreams-detail-sub {
+  font-size: 0.88rem;
+  opacity: 0.94;
+  margin: 0;
+  color: #e5e7eb;
+}
+
+.dreams-detail-meta {
+  font-size: 0.72rem;
+  opacity: 0.72;
+  margin: 0;
+  color: #cbd5f5;
+}
+
+/* detail panel actions */
+.dreams-detail-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dreams-primary-btn,
+.dreams-secondary-btn {
+  border-radius: 999px;
+  padding: 7px 14px;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+/* primary button – warm amber */
+.dreams-primary-btn {
+  background: linear-gradient(90deg, #fbbf24, #fb923c);
+  color: #020617;
+  font-weight: 600;
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.96),
+    0 0 16px rgba(250, 204, 21, 0.7);
+}
+
+.dreams-primary-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.98;
+  box-shadow:
+    0 14px 32px rgba(15, 23, 42, 0.98),
+    0 0 20px rgba(250, 204, 21, 0.9);
+}
+
+/* secondary button – neutral outline */
+.dreams-secondary-btn {
+  background: rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.dreams-secondary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.9);
+}
+
+/* detail panel progress – same amber accent */
+.dreams-detail-progress-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  color: #e5e7eb;
+}
+
+.dreams-detail-progress-bar {
+  margin-top: 4px;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.96);
+  overflow: hidden;
+}
+
+.dreams-detail-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fbbf24, #fb923c);
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.9);
+  transition: width 0.2s ease;
+}
+
+/* modal */
+.dreams-modal-bg {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(7px);
+  background: rgba(3, 7, 18, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.dreams-modal-card {
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(56, 189, 248, 0.08),
+      transparent 55%
+    ),
+    rgba(15, 23, 42, 0.98);
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  width: 90%;
+  max-width: 380px;
+  color: #f9fafb;
+  position: relative;
+  box-shadow: 0 24px 52px rgba(15, 23, 42, 0.98);
+}
+
+.dreams-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: none;
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.dreams-modal-card h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.dreams-modal-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dreams-modal-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.dreams-modal-card input,
+.dreams-modal-card textarea {
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  resize: vertical;
+  outline: none;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+  .dreams-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dreams-list {
+    order: 2;
+  }
+
+  .dreams-detail {
+    order: 1;
+  }
+}

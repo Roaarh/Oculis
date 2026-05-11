@@ -1,0 +1,25 @@
+.sound-button{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:none;
+  background: rgba(255,255,255,0.03);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  position:relative;
+  backdrop-filter: blur(6px);
+}
+.sound-svg { width:28px; height:24px; }
+.muted-dot{
+  position:absolute;
+  right:6px;
+  bottom:6px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#2ecc71; /* green when on */
+  box-shadow:0 0 6px rgba(46,204,113,0.5);
+}
+.muted-dot.on{ background:#e74c3c; box-shadow: 0 0 6px rgba(231,76,60,0.4);}

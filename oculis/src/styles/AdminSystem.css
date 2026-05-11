@@ -1,0 +1,236 @@
+.admin-system-main {
+  flex: 1;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* top: back then title */
+.admin-system-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+/* reuse same back button style as other admin pages */
+.admin-back-dashboard-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.admin-back-dashboard-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.admin-system-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-system-title {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.admin-system-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* cards grid */
+.admin-system-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+  gap: 18px;
+}
+
+.admin-system-card {
+  border-radius: 18px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-system-card-title {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.admin-system-card-text {
+  margin: 2px 0 4px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* theme section */
+.admin-system-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-system-theme-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-system-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.admin-system-theme-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.admin-system-theme-preview {
+  display: flex;
+  gap: 6px;
+}
+
+.admin-system-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.admin-system-theme-selector {
+  margin-top: 4px;
+}
+
+/* toggles and fields */
+.admin-system-toggle-row,
+.admin-system-field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-system-description {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+/* custom switch */
+.admin-switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.admin-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.admin-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: 0.2s;
+  border-radius: 999px;
+}
+
+.admin-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.admin-switch input:checked + .admin-switch-slider {
+  background-color: rgba(123, 92, 255, 0.8);
+}
+
+.admin-switch input:checked + .admin-switch-slider:before {
+  transform: translateX(18px);
+}
+
+/* select */
+.admin-system-select {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  font-size: 0.85rem;
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+/* danger card */
+.admin-system-danger {
+  grid-column: 1 / -1;
+  border-color: rgba(255, 77, 109, 0.6);
+  background: rgba(255, 77, 109, 0.14);
+}
+
+.admin-system-reset-btn {
+  align-self: flex-start;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: rgba(255, 77, 109, 0.9);
+  color: #ffffff;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.admin-system-reset-btn:hover {
+  background: #ff355c;
+  box-shadow: 0 12px 28px rgba(255, 77, 109, 0.6);
+  transform: translateY(-1px);
+}
+
+/* small screens */
+@media (max-width: 768px) {
+  .admin-system-main {
+    padding: 16px;
+  }
+
+  .admin-system-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-system-toggle-row,
+  .admin-system-field-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

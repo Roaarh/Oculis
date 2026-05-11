@@ -1,0 +1,94 @@
+.dream-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* center main content similar to Welcome */
+.dream-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.dream-title {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  font-family: "Inria Serif", serif;
+  color: #fefefe;
+}
+
+.dream-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 18px;
+  font-family: "Javanese Text", serif;
+  color: #bebfc1;
+}
+
+/* simple, clean white pill textarea */
+.dream-textarea {
+  padding: 14px 20px;
+  border-radius: 36px;
+  border: none;
+  outline: none;
+  width: 450px;
+  max-width: 100%;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 1px 5px rgba(44, 30, 80, 0.12);
+  transition: box-shadow 0.25s ease, background-color 0.25s ease,
+    transform 0.15s ease;
+  text-align: left;
+  resize: none;
+  margin-bottom: 12px;
+}
+
+.dream-textarea::placeholder {
+  color: #a8adc1;
+  font-style: italic;
+}
+
+.dream-textarea:focus {
+  box-shadow: 0 0 0 1px rgba(123, 92, 255, 0.4),
+    0 8px 22px rgba(44, 30, 80, 0.3);
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* footer */
+.dream-footer {
+  padding: 12px 0 18px;
+}
+
+.dream-footer-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* responsive tweaks */
+@media (max-width: 480px) {
+  .dream-title {
+    font-size: 1.8rem;
+  }
+
+  .dream-textarea {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .dream-title {
+    font-size: 2.6rem;
+  }
+
+  .dream-subtitle {
+    font-size: 1rem;
+  }
+}

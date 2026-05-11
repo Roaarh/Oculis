@@ -1,0 +1,1 @@
+/*tasks that are inside each circle in the roadmap.so it will be the code of the task row (checkbox+edit)the user can edit the tasks */

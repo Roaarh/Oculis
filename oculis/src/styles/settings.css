@@ -1,0 +1,142 @@
+.settings-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* center card vertically and horizontally */
+.settings-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* Back button above the card */
+.settings-back-btn {
+  align-self: flex-start;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.settings-back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+/* centered white-transparent glass card */
+.settings-card-minimal.glass-white {
+  width: 100%;
+  max-width: 520px;
+  padding: 24px 24px 20px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #f5f3ff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.settings-title-minimal {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* sections */
+.settings-section-minimal {
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-row-minimal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-label-minimal {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.settings-desc-minimal {
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+/* actions */
+.settings-actions-minimal {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* first click: soft delete option */
+.settings-delete-minimal-soft {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  background: transparent;
+  color: #f5f3ff;
+  cursor: pointer;
+}
+
+/* second click: emphasized confirm delete */
+.settings-delete-minimal-confirm {
+  flex: 1;
+  border-radius: 999px;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  background: linear-gradient(135deg, #034f5e, #6302bd);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* logout: now red */
+.settings-logout-minimal {
+  flex: 1;
+  border-radius: 999px;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background:linear-gradient(135deg, #034f5e, #6302bd);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* small screens */
+@media (max-width: 600px) {
+  .settings-card-minimal.glass-white {
+    padding: 20px 18px 16px;
+    max-width: 100%;
+  }
+
+  .settings-actions-minimal {
+    flex-direction: column;
+  }
+}

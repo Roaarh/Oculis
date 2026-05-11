@@ -1,0 +1,176 @@
+/* Root */
+.onb-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main: single centered card */
+.onb-main-single {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3px 16px;
+  box-sizing: border-box;
+}
+
+/* Card */
+.onb-card-single {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+  padding: 24px 24px 28px;
+  box-sizing: border-box;
+  backdrop-filter: blur(12px);
+}
+
+/* Typography */
+.onb-title-big {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+}
+
+.onb-sub-big {
+  font-size: 17px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin: 0 0 18px 0;
+}
+
+/* Form */
+.onb-form-simpler {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.onb-field-large {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.onb-field-large > span {
+  font-size: 16px;
+}
+
+/* Inputs: white background, black text inside */
+.onb-field-large select,
+.onb-field-large textarea {
+  border-radius: 12px;
+  border: none;
+  padding: 10px 12px;
+  font-size: 15px;
+  outline: none;
+  background: #ffffff;
+  color: #000000;
+}
+
+.onb-field-large textarea {
+  resize: vertical;
+}
+
+/* Pills */
+.onb-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.onb-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.onb-pill-active {
+  background: linear-gradient(135deg, #034f5e, #6302bd);
+  transform: translateY(-1px);
+}
+
+/* Submit row */
+.onb-submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.onb-submit-row-two {
+  justify-content: flex-end;
+}
+
+.onb-continue-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  color:linear-gradient(135deg, #034f5e, #6302bd); ;
+}
+
+.onb-back-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.onb-small-note {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .onb-main-single {
+    padding: 24px 12px;
+  }
+
+  .onb-card-single {
+    padding: 20px 16px 24px;
+  }
+
+  .onb-title-big {
+    font-size: 24px;
+  }
+
+  .onb-sub-big {
+    font-size: 15px;
+  }
+
+  .onb-submit-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .onb-continue-btn,
+  .onb-back-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .onb-title-big {
+    font-size: 22px;
+  }
+
+  .onb-field-large > span {
+    font-size: 15px;
+  }
+
+  .onb-pill {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}

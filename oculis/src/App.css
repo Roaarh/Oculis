@@ -1,0 +1,19 @@
+body.light {
+  --bg: #fff;
+  --text: #222;
+}
+body.dark {
+  --bg: #222;
+  --text: #fff;
+}
+body.blue {
+  --bg: #eaf6ff;
+  --text: #003366;
+}
+
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}

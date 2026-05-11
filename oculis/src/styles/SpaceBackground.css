@@ -1,0 +1,27 @@
+.space-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 
+    /* Add 200-400 randomized positions like: */
+    -42vw -4vh 1px 0 #fff,
+    25vw -41vh 1px 0 #fff,
+    /* Generate more via JS console or tool for density */
+    /* Full list from example: see CodePen reference */
+    47vw 35vh 1px 0 #fff /* ... continue for 300+ stars */;
+  transform: translate(-50%, -50%);
+  animation: galaxyMove 20s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes galaxyMove {
+  0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) scale(1.1) rotate(180deg); }
+  100% { transform: translate(-50%, -50%) scale(1.3) rotate(360deg); }
+}
+
+body { background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); overflow-x: hidden; } /* Space gradient */

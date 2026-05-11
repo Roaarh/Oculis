@@ -1,0 +1,212 @@
+.admin-roadmaps-main {
+  flex: 1;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* top: back then title */
+.admin-roadmaps-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+/* reuse same back button style as users */
+.admin-back-dashboard-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.admin-back-dashboard-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.admin-roadmaps-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-roadmaps-title {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.admin-roadmaps-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* filters row */
+.admin-roadmaps-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* search: small white */
+.admin-roadmaps-search {
+  width: 220px;
+  border-radius: 999px;
+  border: none;
+  padding: 6px 10px;
+  background: #ffffff;
+  color: #222222;
+  outline: none;
+  font-size: 0.85rem;
+}
+
+.admin-roadmaps-search::placeholder {
+  color: #777777;
+}
+
+/* select: dark themed */
+.admin-roadmaps-filter-select {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  font-size: 0.85rem;
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+/* table wrapper */
+.admin-roadmaps-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* table */
+.admin-roadmaps-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-roadmaps-table th,
+.admin-roadmaps-table td {
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.admin-roadmaps-table thead {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid rgba(123, 92, 255, 0.7);
+}
+
+.admin-roadmaps-table th {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.admin-roadmaps-table tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-roadmaps-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* empty state */
+.admin-roadmaps-empty {
+  text-align: center;
+  padding: 16px 0;
+  opacity: 0.8;
+}
+
+/* status badges */
+.admin-roadmaps-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.admin-roadmaps-badge-active {
+  background: rgba(36, 203, 166, 0.25);
+}
+
+.admin-roadmaps-badge-completed {
+  background: rgba(123, 92, 255, 0.28);
+}
+
+.admin-roadmaps-badge-review {
+  background: rgba(255, 193, 77, 0.28);
+}
+
+/* action buttons */
+.admin-roadmaps-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-roadmaps-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.admin-roadmaps-btn:hover {
+  transform: translateY(-1px);
+}
+
+.admin-roadmaps-btn-user:hover {
+  background: rgba(123, 92, 255, 0.28);
+}
+
+.admin-roadmaps-btn-analysis:hover {
+  background: rgba(36, 203, 166, 0.28);
+}
+
+/* small screens */
+@media (max-width: 768px) {
+  .admin-roadmaps-main {
+    padding: 16px;
+  }
+
+  .admin-roadmaps-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .admin-roadmaps-filters {
+    align-items: flex-start;
+  }
+
+  .admin-roadmaps-search {
+    max-width: 100%;
+  }
+
+  .admin-roadmaps-table th,
+  .admin-roadmaps-table td {
+    padding: 8px 10px;
+  }
+}

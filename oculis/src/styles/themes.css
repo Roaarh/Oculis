@@ -1,0 +1,74 @@
+/*CSS variables for gradients*/
+
+/* this is the color of the purple theme :linear-gradient(135deg,#03005E 0%, #53238D 50% ,#2F085E 100%);*/
+/* this is the color of the blue  theme :linear-gradient(135deg,#00F5D4 0%, #00D8E7 50% ,#00C9C1 75%,#00F5D4 100%);*/
+/* this is the color of the red theme :linear-gradient( 135deg , #8338EC 10%, #FE7523 30%, #FD2B3B 50% , #FE7523 70%, #8338EC 95%);*/
+/* this is the color of the pink theme linear-gradient(135deg, #FCB69F 0%, #FFD3C0 10%, #FFB9AF 55% , #FFD3C0 75%, #FCB69F 100%);*/
+/* this is the color of the blue buttons  :linear-gradient(135deg,#3AB5B0 0%, #3D99BE 31% ,#56317A 100%);*/
+.theme-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+
+.theme-circle.selected {
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #ffffff80;
+  transform: scale(1.05);
+}
+
+.theme-circle:focus {
+  border: 3px solid #5CE1E6;
+  box-shadow: 0 0 0 2px #5CE1E6;
+}
+
+.theme-circle::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: #ffffff;
+  background:transparent;
+  padding: 2px 12px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.theme-circle:hover::after {
+  opacity: 1;
+}
+.theme-circle {
+  background-clip: padding-box;
+  backdrop-filter: blur(2px);
+}
+.theme-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1.5px solid rgba(0, 0, 0, 0.6);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s cubic-bezier(.45,1.08,.72,.8), box-shadow 0.15s, border 0.2s;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+/* Hover: subtle enlarge and glow */
+.theme-circle:hover {
+  transform: scale(1.16);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.3), 0 0 0 4px #ffffff30;
+  z-index: 1;
+}
+
+/* Selected state: combines hover and selected for crisp feedback */
+.theme-circle.selected {
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #ffffff80;
+  transform: scale(1.12); /* slightly larger on selected */
+}

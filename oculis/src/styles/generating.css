@@ -1,0 +1,19 @@
+.generating-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.generating-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.generating-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

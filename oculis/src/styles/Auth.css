@@ -1,0 +1,160 @@
+/* src/styles/Auth.css */
+
+.auth-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* center card below navbar */
+.auth-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+/* glass / transparent card */
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 32px 28px;
+  border-radius: 24px;
+  background: rgba(7, 3, 15, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 55px rgb(0, 0, 0);
+}
+
+/* toggle buttons */
+.auth-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.auth-toggle-btn {
+  flex: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.auth-toggle-btn.active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* forms */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-title {
+  margin: 4px 0 2px;
+  font-size: 1.4rem;
+}
+
+.auth-subtitle {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.auth-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.auth-input {
+  border-radius: 14px;
+  border: none;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  
+}
+
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-submit-btn {
+  margin-top: 10px;
+  width: 100%;
+}
+/* admin link under login */
+.auth-admin-link {
+  margin-top: 10px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  align-self: flex-start; /* lines up with inputs on the left */
+  padding: 0;
+}
+
+.auth-admin-link:hover {
+  color: #ffffff;
+}
+/* small screens */
+@media (max-width: 600px) {
+  .auth-main {
+    padding: 24px 12px;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    padding: 22px 18px; /* less padding so it fits better */
+    border-radius: 18px;
+  }
+
+  .auth-title {
+    font-size: 1.25rem;
+  }
+
+  .auth-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .auth-toggle {
+    gap: 4px;
+  }
+
+  .auth-toggle-btn {
+    font-size: 0.85rem;
+    padding: 6px 0;
+  }
+
+  .auth-input {
+    font-size: 0.9rem;
+    padding: 9px 10px;
+  }
+}
+
+/* very small phones */
+@media (max-width: 360px) {
+  .auth-main {
+    padding: 18px 10px;
+  }
+
+  .auth-card {
+    padding: 18px 14px;
+  }
+}
